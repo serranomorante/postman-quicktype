@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2018",
+    "allowJs": true,
+    "module": "commonjs",
+    "rootDir": "src",
+    "types": [],
+    "declaration": true,
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "stripInternal": true
+  },
+  "include": ["src"]
+}

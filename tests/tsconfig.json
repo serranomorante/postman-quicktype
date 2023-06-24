@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "references": [
+    {
+      "name": "postman-quicktype",
+      "path": ".."
+    }
+  ],
+  "compilerOptions": {
+    "types": ["jest"],
+    "rootDir": "..",
+    "noEmit": true
+  },
+  "include": ["."]
+}
