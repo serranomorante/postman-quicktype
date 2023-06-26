@@ -3,7 +3,8 @@ src
 .github
 tsconfig.json
 tsconfig.eslint.json
+tsconfig.tsbuildinfo
 .babelrc
-eslintrc.json
+.eslintrc.json
 tests
 
