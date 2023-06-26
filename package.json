@@ -1,14 +1,17 @@
 {
   "name": "postman-quicktype",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Generate types from postman response examples",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": false,
   "scripts": {
     "test": "jest",
     "build": "tsc",
     "dev": "npm run build --watch --preserveWatchOutput",
-    "lint": "eslint src --ext js,ts"
+    "lint": "eslint src --ext js,ts",
+    "ci": "npm run lint && npm run test && npm run build",
+    "release": "npm run lint && npm run test && npm run build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
+    "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.2",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
