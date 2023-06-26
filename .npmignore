@@ -1,10 +1,6 @@
-src
-.changeset
-.github
-tsconfig.json
-tsconfig.eslint.json
-tsconfig.tsbuildinfo
-.babelrc
-.eslintrc.json
-tests
-
+*
+!package.json
+!dist/**/*
+!CHANGELOG.md
+!README.md
+!LICENSE
