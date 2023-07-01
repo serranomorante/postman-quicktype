@@ -1,6 +1,6 @@
 {
   "name": "postman-quicktype",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Generate types from postman response examples",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

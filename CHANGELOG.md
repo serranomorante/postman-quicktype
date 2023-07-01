@@ -1,5 +1,11 @@
 # postman-quicktype
 
+## 0.0.7
+
+### Patch Changes
+
+- 5ed46a8: Fix changeset not found issue
+
 ## 0.0.6
 
 ### Patch Changes
