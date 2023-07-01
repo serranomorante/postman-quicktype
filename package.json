@@ -5,10 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
+  "bin": {
+    "postman-quicktype": "dist/index.js"
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "dev": "npm run build --watch --preserveWatchOutput",
+    "dev": "tsc --watch --preserveWatchOutput",
     "lint": "eslint src --ext js,ts",
     "ci": "npm run lint && npm run test && npm run build",
     "release": "npm run lint && npm run test && npm run build && changeset publish"
@@ -32,6 +35,8 @@
     "@babel/preset-typescript": "^7.22.5",
     "@changesets/cli": "^2.26.1",
     "@types/jest": "^29.5.2",
+    "@types/node-fetch": "^2.6.4",
+    "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "eslint": "^8.43.0",
@@ -41,5 +46,9 @@
   "volta": {
     "node": "18.16.1",
     "npm": "9.7.2"
+  },
+  "peerDependencies": {
+    "node-fetch": "^2.6.12",
+    "yargs": "^17.7.2"
   }
 }
