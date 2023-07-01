@@ -1,5 +1,11 @@
 # postman-quicktype
 
+## 0.0.6
+
+### Patch Changes
+
+- fc68d9c: Add CLI to get postman workspaces via API
+
 ## 0.0.5
 
 ### Patch Changes
