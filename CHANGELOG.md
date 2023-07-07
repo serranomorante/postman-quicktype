@@ -1,5 +1,11 @@
 # postman-quicktype-cli
 
+## 0.0.8
+
+### Patch Changes
+
+- afd1fc5: Change project name
+
 ## 0.0.7
 
 ### Patch Changes
