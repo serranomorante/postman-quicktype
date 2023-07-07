@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "references": [
     {
-      "name": "postman-quicktype",
+      "name": "postman-quicktype-cli",
       "path": ".."
     }
   ],

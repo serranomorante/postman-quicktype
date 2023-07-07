@@ -1,4 +1,4 @@
-# postman-quicktype
+# postman-quicktype-cli
 
 ## 0.0.7
 

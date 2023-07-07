@@ -1,12 +1,12 @@
 {
-  "name": "postman-quicktype",
+  "name": "postman-quicktype-cli",
   "version": "0.0.7",
   "description": "Generate types from postman response examples",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
   "bin": {
-    "postman-quicktype": "dist/index.js"
+    "postman-quicktype-cli": "dist/index.js"
   },
   "scripts": {
     "test": "jest",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/serranomorante/postman-quicktype.git"
+    "url": "git+https://github.com/serranomorante/postman-quicktype-cli.git"
   },
   "keywords": [
     "postman",
@@ -27,9 +27,9 @@
   "author": "Patricio Serrano <dg2fmb6fb@mozmail.com> (https://github.com/serranomorante)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/serranomorante/postman-quicktype/issues"
+    "url": "https://github.com/serranomorante/postman-quicktype-cli/issues"
   },
-  "homepage": "https://github.com/serranomorante/postman-quicktype#readme",
+  "homepage": "https://github.com/serranomorante/postman-quicktype-cli#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
