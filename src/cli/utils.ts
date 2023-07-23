@@ -1,4 +1,4 @@
-import { ArgumentsCamelCase, Omit } from "yargs";
+import { ArgumentsCamelCase } from "yargs";
 
 /**
  * Checks for a Postman API key in the command line arguments or environment variables.
@@ -9,7 +9,7 @@ import { ArgumentsCamelCase, Omit } from "yargs";
  * @param argv - The command line arguments.
  */
 export function ingestPostmanAPIKey(
-  argv: ArgumentsCamelCase<Omit<object, keyof string[]> & string[]>
+  argv: ArgumentsCamelCase<Record<string, unknown>>
 ) {
   const { k } = argv;
   if (!k) {
