@@ -1,5 +1,11 @@
 # postman-quicktype-cli
 
+## 0.1.0
+
+### Minor Changes
+
+- 739dea2: Migrate to esm
+
 ## 0.0.8
 
 ### Patch Changes
