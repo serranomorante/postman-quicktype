@@ -1,4 +1,4 @@
-import { TPackageJSONFile } from "../common";
+import { TPackageJSONFile } from "../common.js";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function isPackageJSONFile(arg: any): arg is TPackageJSONFile {
