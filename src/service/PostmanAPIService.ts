@@ -1,10 +1,11 @@
 import fetch from "node-fetch";
-import { assertIsTypedArray } from "../types";
+import { assertIsTypedArray, assertIsTypedObject } from "../types/index.js";
 import {
   isPostmanCollection,
+  isPostmanCollections,
   isPostmanWorkspace,
-} from "../types/utils/postman";
-import { hasProperty } from "../utils";
+} from "../types/utils/postman.js";
+import { hasProperty } from "../utils/index.js";
 
 export class PostmanAPIService {
   postmanAPIKey: string;
@@ -21,7 +22,7 @@ export class PostmanAPIService {
         "X-Api-Key": this.postmanAPIKey,
       },
     });
-    const jsonResponse = (await response.json()) as unknown;
+    const jsonResponse = await response.json();
     if (!jsonResponse) {
       throw new Error("No response from Postman API.");
     }
@@ -34,14 +35,14 @@ export class PostmanAPIService {
 
   public async getCollections(workspaceId: string) {
     const response = await fetch(
-      `${this.baseUrl}/workspaces/${workspaceId}/collections`,
+      `${this.baseUrl}/collections?workspace=${workspaceId}`,
       {
         headers: {
           "X-Api-Key": this.postmanAPIKey,
         },
       }
     );
-    const jsonResponse = (await response.json()) as unknown;
+    const jsonResponse = await response.json();
     if (!jsonResponse) {
       throw new Error("No response from Postman API.");
     }
@@ -49,7 +50,27 @@ export class PostmanAPIService {
     if (!hasProperty(jsonResponse, "collections")) {
       throw new Error("No collections property in Postman API response.");
     }
-    assertIsTypedArray(jsonResponse.collections, isPostmanCollection);
+    assertIsTypedArray(jsonResponse.collections, isPostmanCollections);
     return jsonResponse.collections;
+  }
+
+  public async getCollection(collectionId: string) {
+    const response = await fetch(
+      `${this.baseUrl}/collections/${collectionId}`,
+      {
+        headers: {
+          "X-Api-Key": this.postmanAPIKey,
+        },
+      }
+    );
+    const jsonResponse = await response.json();
+    if (!jsonResponse) {
+      throw new Error("No response from Postman API.");
+    }
+    if (!hasProperty(jsonResponse, "collection")) {
+      throw new Error("No collection property in Postman API response.");
+    }
+    assertIsTypedObject(jsonResponse.collection, isPostmanCollection);
+    return jsonResponse.collection;
   }
 }

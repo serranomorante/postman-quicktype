@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TPostmanCollection, TPostmanWorkspace } from "../postman";
+import {
+  TPostmanCollection,
+  TPostmanCollections,
+  TPostmanWorkspace,
+} from "../postman.js";
 
 export function isPostmanWorkspace(arg: any): arg is TPostmanWorkspace {
   return (
@@ -11,7 +15,7 @@ export function isPostmanWorkspace(arg: any): arg is TPostmanWorkspace {
   );
 }
 
-export function isPostmanCollection(arg: any): arg is TPostmanCollection {
+export function isPostmanCollections(arg: any): arg is TPostmanCollections {
   return (
     /* eslint-disable @typescript-eslint/no-unsafe-member-access */
     typeof arg.id === "string" &&
@@ -21,5 +25,18 @@ export function isPostmanCollection(arg: any): arg is TPostmanCollection {
     typeof arg.updatedAt === "string" &&
     typeof arg.uid === "string" &&
     typeof arg.isPublic === "boolean"
+  );
+}
+
+export function isPostmanCollection(arg: any): arg is TPostmanCollection {
+  return (
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+    typeof arg.info === "object" &&
+    typeof arg.info._postman_id === "string" &&
+    typeof arg.info.name === "string" &&
+    typeof arg.info.schema === "string" &&
+    typeof arg.info.updatedAt === "string" &&
+    typeof arg.info.uid === "string" &&
+    Array.isArray(arg.item)
   );
 }

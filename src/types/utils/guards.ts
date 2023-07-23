@@ -5,7 +5,7 @@ export function assertIsTypedObject<T>(
   check: (val: any) => val is T
 ): asserts arg is T {
   if (!check(arg)) {
-    throw new Error(`Invalid type: ${JSON.stringify(arg)}`);
+    throw new Error(`Invalid type: ${JSON.stringify(arg, null, 2)}`);
   }
 }
 
